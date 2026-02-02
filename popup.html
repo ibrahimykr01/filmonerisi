@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    :root { --main-bg: #0984e3; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: var(--main-bg); width: 350px; min-height: 550px; display: flex; flex-direction: column; align-items: center; padding: 15px; transition: 0.5s; color: white; }
+    #movie-card { background: rgba(255,255,255,0.15); border-radius: 12px; padding: 10px; margin: 10px 0; width: 100%; display: none; text-align: center; border: 1px solid rgba(255,255,255,0.2); }
+    #movie-poster { width: 100%; border-radius: 8px; max-height: 200px; object-fit: cover; }
+    #movie-title { font-weight: bold; margin: 8px 0; font-size: 16px; }
+    #movie-overview { font-size: 11px; max-height: 60px; overflow-y: auto; margin-bottom: 10px; padding: 5px; }
+    .action-row { display: flex; justify-content: center; gap: 8px; margin-bottom: 12px; }
+    .btn-small { background: #fff; color: var(--main-bg); border: none; padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 11px; font-weight: bold; }
+    .share-container { display: flex; gap: 15px; margin: 10px 0; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 20px; }
+    .share-container a { color: white; font-size: 18px; text-decoration: none; cursor: pointer; }
+    #fav-container { width: 100%; margin-top: 15px; display: none; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 10px; text-align: left; }
+    .fav-item { display: flex; justify-content: space-between; padding: 5px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 11px; }
+    #suggest-btn { width: 100%; padding: 12px; border-radius: 25px; border: none; background: #fff; color: var(--main-bg); font-weight: bold; cursor: pointer; }
+    .theme-selector { display: flex; gap: 8px; margin-bottom: 10px; }
+    .dot { width: 18px; height: 18px; border-radius: 50%; cursor: pointer; border: 2px solid #fff; }
+  </style>
+</head>
+<body>
+  <div class="theme-selector">
+    <div class="dot" style="background:#0984e3;" data-color="#0984e3"></div>
+    <div class="dot" style="background:#e50914;" data-color="#e50914"></div>
+    <div class="dot" style="background:#27ae60;" data-color="#27ae60"></div>
+  </div>
+  <h3>🎬 Film Önerisi</h3>
+  <div id="movie-card">
+    <img id="movie-poster" src="">
+    <div id="movie-title"></div>
+    <div id="movie-overview"></div>
+    <div class="action-row">
+      <button class="btn-small" id="trailer-btn"><i class="fas fa-play"></i> Fragman</button>
+      <button class="btn-small" id="fav-btn"><i class="fas fa-heart"></i> Favori</button>
+    </div>
+  </div>
+  <button id="suggest-btn">Film Öner</button>
+  <div class="share-container">
+    <a id="wa-share"><i class="fab fa-whatsapp"></i></a>
+    <a id="tw-share"><i class="fab fa-twitter"></i></a>
+    <a id="copy-share"><i class="fas fa-copy"></i></a>
+  </div>
+  <button id="toggle-favs" style="background:none; border:none; color:white; text-decoration:underline; font-size:11px; cursor:pointer;">Favorilerim</button>
+  <div id="fav-container"></div>
+  <p style="font-size: 9px; margin-top: 15px; opacity: 0.6;">Developed by ibrahimykr</p>
+  <script src="popup.js"></script>
+</body>
+</html>
